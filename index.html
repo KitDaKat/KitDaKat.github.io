@@ -167,17 +167,19 @@ var win = window.open();
   		</a>
 	</div>
 	<br>
-	<input type="text" id="customlinkbox" name="customlinkbox" placeholder="Enter website for custom link (ex: https://kitdakat.xyz)">
-
+	<div style="text-align: center;">
+		<input type="text" id="customlinkbox" name="customlinkbox" placeholder="ex: https://kitdakat.xyz">
+	</div>
+		
 	<br>
 
 	<div style="text-align: center;">
-  		<a href="https://kitdakat.xyz" id="customaboutblank" style="color: white; text-decoration: none;">
-   			custom aboutblank
-  		</a>
+ 		<button style="padding: 20px 40px; font-size: 24px;" id="customaboutblank">custom aboutblank</button>
 	</div>
 	<br>
-	<input type="text" id="customaboutblankbox" name="customaboutblankbox" placeholder="Enter website for custom aboutblank (ex: https://kitdakat.xyz)">
+	<div style="text-align: center;">
+		<input type="text" id="customaboutblankbox" name="customaboutblankbox" placeholder="ex: https://kitdakat.xyz">
+	</div>
 	
 	<script>
 		const customlinkbox = document.getElementById('customlinkbox')
@@ -185,15 +187,42 @@ var win = window.open();
 		const customaboutblankbox = document.getElementById('customaboutblankbox')
 		const customaboutblank = document.getElementById('customaboutblank')
 
-		  customlinkbox.addEventListener('input', function() {
+		customlinkbox.addEventListener('input', function() {
     			customlink.href = customlinkbox.value
 			  	customlink.textContent = customlinkbox.value
   		});
 
 		customaboutblankbox.addEventListener('input', function() {
-    			customaboutblank.href = customaboutblankbox.value
 			  	customaboutblank.textContent = customaboutblankbox.value
   		});
+
+		customaboutblank.addEventListener('onclick', function() {
+		var win = window.open();
+  win.document.write(`
+    <html lang="en">
+      <head>
+        <title>Schoology</title>
+        <link rel="icon" type="image/x-icon" href="schoology.ico">
+        <style>
+          body { 
+            margin: 0; 
+            background-color: black; 
+          }
+          iframe {
+            width: 100%;
+            height: 100vh;
+            border: none;
+          }
+        </style>
+      </head>
+      <body>
+        <iframe src="` + customaboutblankbox.value + `"></iframe>
+      </body>
+    </html>
+  `);
+
+  win.document.close();
+		}
 	</script>
 	
   	<br>
