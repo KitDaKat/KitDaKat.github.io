@@ -157,7 +157,45 @@ var win = window.open();
    			chatgpt (might not work)
   		</a>
 	</div>
-  
+
+	<br>
+	<br>
+	
+	<div style="text-align: center;">
+  		<a href="https://kitdakat.xyz" id="customlink" style="color: white; text-decoration: none;">
+   			custom link
+  		</a>
+	</div>
+	<br>
+	<input type="text" id="customlinkbox" name="customlinkbox" placeholder="Enter website for custom link (ex: https://kitdakat.xyz)">
+
+	<br>
+
+	<div style="text-align: center;">
+  		<a href="https://kitdakat.xyz" id="customaboutblank" style="color: white; text-decoration: none;">
+   			custom aboutblank
+  		</a>
+	</div>
+	<br>
+	<input type="text" id="customaboutblankbox" name="customaboutblankbox" placeholder="Enter website for custom aboutblank (ex: https://kitdakat.xyz)">
+	
+	<script>
+		const customlinkbox = document.getElementById('customlinkbox')
+		const customlink = document.getElementById('customlink')
+		const customaboutblankbox = document.getElementById('customaboutblankbox')
+		const customaboutblank = document.getElementById('customaboutblank')
+
+		  customlinkbox.addEventListener('input', function() {
+    			customlink.href = customlinkbox.value
+			  	customlink.textContent = customlinkbox.value
+  		});
+
+		customaboutblankbox.addEventListener('input', function() {
+    			customaboutblank.href = customaboutblankbox.value
+			  	customaboutblank.textContent = customaboutblankbox.value
+  		});
+	</script>
+	
   	<br>
 	<br>
 	
